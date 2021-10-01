@@ -2,7 +2,7 @@ package linkedList;
 
 public class LinkedList {
   private LinkedListNode head;
-  private int size;
+  public int size;
 
   public LinkedList(){
   }
@@ -14,13 +14,15 @@ public class LinkedList {
           head =node;
           size++;
       }else{
-          LinkedListNode current = null;
-          while (current.getNext()!= null){
+          LinkedListNode current ;
+          current= head;
+         while (current.getNext()!= null){
             current=current.getNext();
           }
           LinkedListNode node = new LinkedListNode(data);
           current.setNext(node);
           size++;
+
       }
 
   }
@@ -49,7 +51,6 @@ public class LinkedList {
         linkedListData+="NULL";
         return "Linked List = " + linkedListData;
       }
-
 
     }
 

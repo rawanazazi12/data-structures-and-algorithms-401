@@ -9,11 +9,14 @@ public class Main {
         System.out.println("*************************Start*************************");
         LinkedList linkedList = new LinkedList();
 
-        linkedList.insert("A");
-//        linkedList.insert("B");
-
+        linkedList.insert("a");
+        linkedList.insert("b");
+        linkedList.insert("c");
+        linkedList.insert("d");
         System.out.println(linkedList);
-        System.out.println(linkedList.isIncluded("B"));
+        System.out.println(linkedList.isIncluded("g"));
+        System.out.println(linkedList.size);
+        System.out.println("*************************End***************************");
 
     }
 

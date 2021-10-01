@@ -3,6 +3,7 @@
  */
 package linkedList;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,4 +11,24 @@ class MainTest {
     @Test void someLibraryMethodReturnsTrue() {
         Main classUnderTest = new Main();
     }
+    @Test void isIncludedMethod(){
+        LinkedList linkedList =new LinkedList();
+        linkedList.insert("m");
+        String testValue="m";
+        Assertions.assertTrue(linkedList.isIncluded(testValue));
+    }
+
+    @Test void isEmpty(){
+        LinkedList linkedList=new LinkedList();
+        linkedList.insert("g");
+        Assertions.assertTrue(linkedList.size>=0);
+    }
+   @Test void insertMethod(){
+        LinkedList linkedList=new LinkedList();
+        linkedList.insert("n");
+        linkedList.insert("j");
+        linkedList.insert("p");
+        Assertions.assertEquals(3, linkedList.size);
+
+   }
 }
