@@ -31,4 +31,26 @@ class MainTest {
         Assertions.assertEquals(3, linkedList.size);
 
    }
+    @Test
+    public void addNewNodeAtEndTest() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.addNewNodeAtEnd("A");
+        linkedList.addNewNodeAtEnd("Z");
+        Assertions.assertEquals(2, linkedList.size);
+    }
+    @Test
+    public void addBeforeAndAfterTest() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.addNewNodeAtEnd("a");
+        linkedList.addNewNodeAtEnd("b");
+        linkedList.addNewNodeAtEnd("c");
+        linkedList.insertBefore("b" , "new");
+        linkedList.insertAfter("c" , "new");
+        Assertions.assertEquals("a" , linkedList.head.getData());
+        Assertions.assertEquals(5, linkedList.size);
+        Assertions.assertTrue(linkedList.isIncluded("b") );
+        Assertions.assertFalse(linkedList.isIncluded("5") );
+        Assertions.assertEquals("Linked List = {a} => {new} => {b} => {c} => {new} => NULL" , linkedList.toString());
+    }
+
 }

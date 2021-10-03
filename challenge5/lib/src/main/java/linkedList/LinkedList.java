@@ -1,7 +1,7 @@
 package linkedList;
 
 public class LinkedList {
-  private LinkedListNode head;
+  public LinkedListNode head;
   public int size;
 
   public LinkedList(){
@@ -52,7 +52,57 @@ public class LinkedList {
         return "Linked List = " + linkedListData;
       }
 
-    }
+      public void addNewNodeAtEnd(String data){
+      LinkedListNode node =new LinkedListNode(data);
+      if (head == null){
+          head =node;
+      }else {
+          LinkedListNode last= head;
+          while(last.getNext()!=null){
+              last=last.getNext();
+          }
+          last.setNext(node);
+      }
+      size++;
+      }
+
+      public void insertBefore(String referenceNodeData,String newNodeData ){
+          LinkedListNode newNode =new LinkedListNode(newNodeData);
+          if (head == null){
+              head=newNode;
+          }else if(head.getData()==referenceNodeData){
+              newNode.setNext(head);
+              head =newNode;
+              }else{
+              LinkedListNode temp=head;
+              while(temp.getNext().getData() != referenceNodeData){
+                  temp=temp.getNext();
+              }
+              newNode.setNext(temp.getNext());
+              temp.setNext(newNode) ;
+          }
+          size++;
+          }
+
+          public void insertAfter(String referenceNodeData,String newNodeData){
+          LinkedListNode newNode= new LinkedListNode(newNodeData);
+              if (head == null){
+                  head=newNode;
+              }else {
+                  LinkedListNode temp=head;
+                  while(temp.getData()!= referenceNodeData){
+                      temp=temp.getNext();
+                  }
+                  newNode.setNext(temp.getNext());
+                  temp.setNext(newNode) ;
+              }
+              size++;
+          }
+
+
+      }
+
+
 
 
 
