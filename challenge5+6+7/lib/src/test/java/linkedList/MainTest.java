@@ -72,6 +72,31 @@ class MainTest {
         Assertions.assertEquals("Linked List = {a} => {b} => {c} => {new} => NULL" , linkedList.toString());
 
     }
+    @Test
+    // test four cases
+    public void kthTest(){
+        LinkedList linkedList=new LinkedList();
+        linkedList.insert("5");
+        linkedList.insert("9");
+        linkedList.insert("3");
+        linkedList.insert("7");
+        Assertions.assertEquals(4, linkedList.size);
+        Assertions.assertEquals("9",linkedList.kthFromEnd(2));
+        Assertions.assertEquals( "k value out of boundaries",linkedList.kthFromEnd(8));
+        Assertions.assertEquals( "k value out of boundaries",linkedList.kthFromEnd(4));
+        Assertions.assertEquals( "k value out of boundaries",linkedList.kthFromEnd(-5));
+        Assertions.assertEquals( "9",linkedList.kthFromEnd(2));
+
+
+    }
+    @Test
+    // the case when linked list size =1
+    public void kthTestWithSizeOne(){
+        LinkedList linkedList=new LinkedList();
+        linkedList.insert("5");
+        Assertions.assertEquals( "The Linked List size is 1",linkedList.kthFromEnd(4));
+
+    }
 
 
     }
