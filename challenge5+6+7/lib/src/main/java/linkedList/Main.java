@@ -31,6 +31,13 @@ public class Main {
         System.out.println(linkedList+ "\nLinked List Size => "+linkedList.size);
 
 
+        //*** challenge 07
+        // kth from end
+
+
+        System.out.println(linkedList.kthFromEnd(8));
+
+
 
 
         System.out.println("*************************End***************************");
