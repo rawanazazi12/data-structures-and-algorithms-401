@@ -34,8 +34,9 @@ public class Main {
         //*** challenge 07
         // kth from end
 
+        System.out.println(linkedList.kthFromEnd(3));
+        System.out.println(linkedList.kthFromEnd(10));
 
-        System.out.println(linkedList.kthFromEnd(8));
 
 
 

@@ -111,23 +111,29 @@ public class LinkedList {
            int counter=0;
            LinkedListNode current= head;
 
-           while (current!=null){
-               current=current.getNext();
-               counter++ ;
-           }
-
-           int index= counter - k - 1;
-           current = head;
-           for (int i=0; i<index;i++){
-               current=current.getNext();
-           }
               try {
-                  if (k > counter - 1 || k < 0) {
+
+                  while (current!=null){
+                      current=current.getNext();
+                      counter++ ;
+
+                  }
+                  int index= counter - k - 1;
+                  current = head;
+                  for (int i=0; i<index;i++){
+                      current=current.getNext();
+                      if ( k < 0 && counter!=1 ) {
+                          throw new IndexOutOfBoundsException("k value out of boundaries");
+                      }
+
+                  }if(k > counter - 1 && counter!=1){
                       throw new IndexOutOfBoundsException("k value out of boundaries");
+                  }else if (counter ==1 ){
+                      return "The Linked List size is 1";
                   }
 
               } catch (IndexOutOfBoundsException e){
-                  System.out.println(e.getMessage());
+                  return e.getMessage();
               }
 
               return current.getData() ;
