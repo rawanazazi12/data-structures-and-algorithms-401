@@ -73,7 +73,9 @@ public class LinkedList {
           }else if(head.getData()==referenceNodeData){
               newNode.setNext(head);
               head =newNode;
-              }else{
+              }else if(isIncluded(referenceNodeData)==false){
+              System.out.println("The reference node you entered is not exist");
+          } else {
               LinkedListNode temp=head;
               while(temp.getNext().getData() != referenceNodeData){
                   temp=temp.getNext();
@@ -88,13 +90,17 @@ public class LinkedList {
           LinkedListNode newNode= new LinkedListNode(newNodeData);
               if (head == null){
                   head=newNode;
-              }else {
+              }else if(isIncluded(referenceNodeData)==false){
+                  System.out.println("The reference node you entered is not exist");
+              }else  {
                   LinkedListNode temp=head;
                   while(temp.getData()!= referenceNodeData){
                       temp=temp.getNext();
                   }
+
                   newNode.setNext(temp.getNext());
                   temp.setNext(newNode) ;
+
               }
               size++;
           }

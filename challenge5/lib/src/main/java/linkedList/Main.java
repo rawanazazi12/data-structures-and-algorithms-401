@@ -23,11 +23,11 @@ public class Main {
         System.out.println(linkedList);
 
         // insert before a specific node
-        linkedList.insertBefore("b","node before");
+        linkedList.insertBefore("c","node before");
         System.out.println(linkedList);
 
         // insert after specific node
-        linkedList.insertAfter("c","node after");
+        linkedList.insertAfter("2","node after");
         System.out.println(linkedList+ "\nLinked List Size => "+linkedList.size);
 
 

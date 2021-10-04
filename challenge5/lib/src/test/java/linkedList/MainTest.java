@@ -52,5 +52,26 @@ class MainTest {
         Assertions.assertFalse(linkedList.isIncluded("5") );
         Assertions.assertEquals("Linked List = {a} => {new} => {b} => {c} => {new} => NULL" , linkedList.toString());
     }
+    @Test
+    public void insertBeforeFirstNodeTest() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.addNewNodeAtEnd("a");
+        linkedList.addNewNodeAtEnd("b");
+        linkedList.addNewNodeAtEnd("c");
+        linkedList.insertBefore("a" , "new");
+        Assertions.assertEquals("Linked List = {new} => {a} => {b} => {c} => NULL" , linkedList.toString());
 
-}
+    }
+    @Test
+    public void insertAfterLastNodeTest() {
+        LinkedList linkedList=new LinkedList();
+        linkedList.addNewNodeAtEnd("a");
+        linkedList.addNewNodeAtEnd("b");
+        linkedList.addNewNodeAtEnd("c");
+        linkedList.insertAfter("c" , "new");
+        Assertions.assertEquals("Linked List = {a} => {b} => {c} => {new} => NULL" , linkedList.toString());
+
+    }
+
+
+    }
