@@ -105,8 +105,39 @@ public class LinkedList {
               size++;
           }
 
+          // challenge 07
 
-      }
+          public String kthFromEnd(int k){
+           int counter=0;
+           LinkedListNode current= head;
+
+           while (current!=null){
+               current=current.getNext();
+               counter++ ;
+           }
+
+           int index= counter - k - 1;
+           current = head;
+           for (int i=0; i<index;i++){
+               current=current.getNext();
+           }
+              try {
+                  if (k > counter - 1 || k < 0) {
+                      throw new IndexOutOfBoundsException("k value out of boundaries");
+                  }
+
+              } catch (IndexOutOfBoundsException e){
+                  System.out.println(e.getMessage());
+              }
+
+              return current.getData() ;
+
+          }
+}
+
+
+
+
 
 
 
