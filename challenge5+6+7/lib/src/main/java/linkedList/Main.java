@@ -37,9 +37,24 @@ public class Main {
         System.out.println(linkedList.kthFromEnd(3));
         System.out.println(linkedList.kthFromEnd(10));
 
+        //*** challenge08
+        // zip two lists
 
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
 
+        System.out.println("First Linked List:");
+        list1.insert("1");
+        list1.insert("3");
+        list1.insert("2");
+        System.out.println(list1);
 
+        System.out.println("Second Linked List:");
+        list2.insert("5");
+        list2.insert("9");
+        list2.insert("4");
+        System.out.println(list2);
+        System.out.println(linkedList.zipLists(list1,list2));;
 
         System.out.println("*************************End***************************");
 

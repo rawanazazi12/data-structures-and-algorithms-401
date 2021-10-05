@@ -50,7 +50,7 @@ class MainTest {
         Assertions.assertEquals(5, linkedList.size);
         Assertions.assertTrue(linkedList.isIncluded("b") );
         Assertions.assertFalse(linkedList.isIncluded("5") );
-        Assertions.assertEquals("Linked List = {a} => {new} => {b} => {c} => {new} => NULL" , linkedList.toString());
+        Assertions.assertEquals("{a} => {new} => {b} => {c} => {new} => NULL" , linkedList.toString());
     }
     @Test
     public void insertBeforeFirstNodeTest() {
@@ -59,7 +59,7 @@ class MainTest {
         linkedList.addNewNodeAtEnd("b");
         linkedList.addNewNodeAtEnd("c");
         linkedList.insertBefore("a" , "new");
-        Assertions.assertEquals("Linked List = {new} => {a} => {b} => {c} => NULL" , linkedList.toString());
+        Assertions.assertEquals("{new} => {a} => {b} => {c} => NULL" , linkedList.toString());
 
     }
     @Test
@@ -69,7 +69,7 @@ class MainTest {
         linkedList.addNewNodeAtEnd("b");
         linkedList.addNewNodeAtEnd("c");
         linkedList.insertAfter("c" , "new");
-        Assertions.assertEquals("Linked List = {a} => {b} => {c} => {new} => NULL" , linkedList.toString());
+        Assertions.assertEquals("{a} => {b} => {c} => {new} => NULL" , linkedList.toString());
 
     }
     @Test
@@ -98,5 +98,89 @@ class MainTest {
 
     }
 
+    // challenge08 Tests
+    @Test
+     // first case test
+    public void zipListsMethodTest1(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+        list1.insert("1");
+        list1.insert("3");
+        list1.insert("2");
+        list2.insert("5");
+        list2.insert("9");
+        Assertions.assertEquals( "{1} => {5} => {3} => {9} => {2} => NULL", linkedList.zipLists(list1,list2).toString());
+    }
+    @Test
+    // second case test
+    public void zipListsMethodTest2(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+        list1.insert("1");
+        list1.insert("3");
+        list1.insert("2");
+        list2.insert("5");
+        list2.insert("9");
+        list2.insert("4");
+        Assertions.assertEquals( "{1} => {5} => {3} => {9} => {2} => {4} => NULL", linkedList.zipLists(list1,list2).toString());
+    }
+    @Test
+    // third case test
+    public void zipListsMethodTest3(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+        list1.insert("1");
+        list1.insert("3");
+        list2.insert("5");
+        list2.insert("9");
+        list2.insert("4");
+        Assertions.assertEquals( "{1} => {5} => {3} => {9} => {4} => NULL", linkedList.zipLists(list1,list2).toString());
+    }
+
+     // test when two lists are empty
+    @Test
+    // fourth case test
+    public void zipListsMethodTest4(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+//        list1.insert("1");
+//        list1.insert("3");
+//        list2.insert("5");
+
+        Assertions.assertEquals( "NULL", linkedList.zipLists(list1,list2).toString(), "The two lists are empty and the merged list is null");
+    }
+    @Test
+    // fifth case test
+    // the first list is empty
+    public void zipListsMethodTest5(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+//        list1.insert("1");
+//        list1.insert("3");
+        list2.insert("5");
+        list2.insert("9");
+        list2.insert("4");
+        Assertions.assertEquals( "{5} => {9} => {4} => NULL", linkedList.zipLists(list1,list2).toString());
+    }
+    @Test
+    // sixth case test
+    // the second list is empty
+    public void zipListsMethodTest6(){
+        LinkedList linkedList=new LinkedList();
+        LinkedList list1 =new LinkedList();
+        LinkedList list2=new LinkedList();
+        list1.insert("1");
+        list1.insert("3");
+        list1.insert("2");
+//        list2.insert("5");
+//        list2.insert("9");
+//        list2.insert("4");
+        Assertions.assertEquals( "{1} => {3} => {2} => NULL", linkedList.zipLists(list1,list2).toString());
+    }
 
     }
