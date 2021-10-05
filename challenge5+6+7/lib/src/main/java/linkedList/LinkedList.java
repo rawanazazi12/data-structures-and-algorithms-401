@@ -1,5 +1,7 @@
 package linkedList;
 
+import org.jetbrains.annotations.NotNull;
+
 public class LinkedList {
   public LinkedListNode head;
   public int size;
@@ -49,7 +51,7 @@ public class LinkedList {
           node=node.getNext();
       }
         linkedListData+="NULL";
-        return "Linked List = " + linkedListData;
+        return  linkedListData;
       }
 
       public void addNewNodeAtEnd(String data){
@@ -139,6 +141,50 @@ public class LinkedList {
               return current.getData() ;
 
           }
+
+          // Challenge08
+    public LinkedList zipLists(@NotNull LinkedList x , LinkedList y){
+        LinkedList mergedList= new LinkedList();
+            if (x.head == null && y.head == null) {
+                System.out.println("The two lists are empty");
+
+            } else if (y.head == null) {
+                System.out.println("The second list is empty, here is The first list : ");
+                mergedList = x;
+                return mergedList;
+            } else if (x.head == null) {
+                System.out.println("The first list is empty, here is The second list : ");
+                mergedList = y;
+                return mergedList;
+            }else {
+                LinkedListNode currentX = x.head;
+                LinkedListNode currentY = y.head;
+                while (currentX.getNext() != null && currentY.getNext() != null) {
+                    mergedList.insert(currentX.getData());
+                    mergedList.insert(currentY.getData());
+                    currentX = currentX.getNext();
+                    currentY = currentY.getNext();
+                }
+                mergedList.insert(currentX.getData());
+                mergedList.insert(currentY.getData());
+
+                if (currentX.getNext() != null) {
+                    while (currentX.getNext() != null) {
+                        currentX = currentX.getNext();
+                        mergedList.insert(currentX.getData());
+                    }
+                } else if (currentY.getNext() != null) {
+                    while (currentY.getNext() != null) {
+                        currentY = currentY.getNext();
+                        mergedList.insert(currentY.getData());
+                    }
+                }
+            }
+
+       return mergedList;
+    }
+
+
 }
 
 
