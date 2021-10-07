@@ -3,62 +3,131 @@
  */
 package linkedList;
 
+import linkedList.queue.Queue;
+import linkedList.stack.Stack;
+
 public class Main {
-    public static void main (String [] args){
+    public static void main (String [] args) throws Exception {
 
-        System.out.println("*************************Start*************************");
-        LinkedList linkedList = new LinkedList();
-        linkedList.insert("a");
-        linkedList.insert("b");
-        linkedList.insert("c");
-        linkedList.insert("d");
-        System.out.println(linkedList);
-        System.out.println(linkedList.isIncluded("g"));
-        System.out.println(linkedList.size);
+//       linkedListMethods();
+//        stackMethods();
+        queueMethods();
+    }
+    public static void linkedListMethods (){
+        //        LinkedList linkedList = new LinkedList();
+//        linkedList.insert("a");
+//        linkedList.insert("b");
+//        linkedList.insert("c");
+//        linkedList.insert("d");
+//        System.out.println(linkedList);
+//        System.out.println(linkedList.isIncluded("g"));
+//        System.out.println(linkedList.size);
+//
+//        // code challenge06
+//
+//        //add at the end of linked list
+//        linkedList.addNewNodeAtEnd("node at end");
+//        System.out.println(linkedList);
+//
+//        // insert before a specific node
+//        linkedList.insertBefore("c","node before");
+//        System.out.println(linkedList);
+//
+//        // insert after specific node
+//        linkedList.insertAfter("2","node after");
+//        System.out.println(linkedList+ "\nLinked List Size => "+linkedList.size);
+//
+//
+//        //*** challenge 07
+//        // kth from end
+//
+//        System.out.println(linkedList.kthFromEnd(3));
+//        System.out.println(linkedList.kthFromEnd(10));
+//
+//        //*** challenge08
+//        // zip two lists
+//
+//        LinkedList list1 =new LinkedList();
+//        LinkedList list2=new LinkedList();
+//
+//        System.out.println("First Linked List:");
+//        list1.insert("1");
+//        list1.insert("3");
+//        list1.insert("2");
+//        System.out.println(list1);
+//
+//        System.out.println("Second Linked List:");
+//        list2.insert("5");
+//        list2.insert("9");
+//        list2.insert("4");
+//        System.out.println(list2);
+//        System.out.println(linkedList.zipLists(list1,list2));
 
-        // code challenge06
 
-        //add at the end of linked list
-        linkedList.addNewNodeAtEnd("node at end");
-        System.out.println(linkedList);
-
-        // insert before a specific node
-        linkedList.insertBefore("c","node before");
-        System.out.println(linkedList);
-
-        // insert after specific node
-        linkedList.insertAfter("2","node after");
-        System.out.println(linkedList+ "\nLinked List Size => "+linkedList.size);
+        LinkedList linkedList5 = new LinkedList();
+        linkedList5.insert("w");
+        linkedList5.insert("o");
+//        linkedList5.insert("o");
+        linkedList5.insert("o");
+        linkedList5.insert("w");
+        System.out.println(linkedList5);
+        System.out.println(linkedList5.size);
+        linkedList5.isPalindromeLL();
 
 
-        //*** challenge 07
-        // kth from end
-
-        System.out.println(linkedList.kthFromEnd(3));
-        System.out.println(linkedList.kthFromEnd(10));
-
-        //*** challenge08
-        // zip two lists
-
-        LinkedList list1 =new LinkedList();
-        LinkedList list2=new LinkedList();
-
-        System.out.println("First Linked List:");
-        list1.insert("1");
-        list1.insert("3");
-        list1.insert("2");
-        System.out.println(list1);
-
-        System.out.println("Second Linked List:");
-        list2.insert("5");
-        list2.insert("9");
-        list2.insert("4");
-        System.out.println(list2);
-        System.out.println(linkedList.zipLists(list1,list2));;
-
-        System.out.println("*************************End***************************");
 
     }
 
 
+
+    public static void stackMethods() throws Exception {
+
+        Stack stack = new Stack ();
+        stack.push("R");
+        stack.push("A");
+        stack.push("W");
+        stack.push("A");
+        stack.push("N");
+        System.out.println(stack);
+
+        System.out.println(stack.isEmpty());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+//        System.out.println(stack.pop());
+        System.out.println(stack.peek());
+
+
+    }
+
+
+    public static void queueMethods(){
+        Queue queue = new Queue();
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        System.out.println(queue);
+        System.out.println(queue.isEmpty());
+        queue.dequeue();
+        System.out.println(queue);
+        queue.dequeue();
+        System.out.println(queue);
+        queue.dequeue();
+        queue.dequeue();
+        System.out.println(queue.dequeue());
+        System.out.println(queue);
+        System.out.println(queue.peek());
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue.peek());
+
+
+    }
 }
