@@ -3,11 +3,16 @@
  */
 package linkedList;
 
+import linkedList.queue.Queue;
+import linkedList.stack.Stack;
+import linkedList.stack.StackNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
+    private Object Exception;
+
     @Test void someLibraryMethodReturnsTrue() {
         Main classUnderTest = new Main();
     }
@@ -183,4 +188,145 @@ class MainTest {
         Assertions.assertEquals( "{1} => {3} => {2} => NULL", linkedList.zipLists(list1,list2).toString());
     }
 
+    // challenge10 Tests
+    //Can successfully push onto a stack
+    @Test
+    public void pushOntoStack(){
+        Stack stack = new Stack();
+        stack.push("R");
+        stack.push("A");
+        stack.push("W");
+        stack.push("A");
+        stack.push("N");
+        Assertions.assertEquals( "Stack { N => A => W => A => R => Null }" ,stack.toString());
     }
+    // Can successfully pop off the stack
+    @Test
+    public void popOffTheStackTest(){
+            Stack stackTest = new Stack();
+            stackTest.push("R");
+            stackTest.push("A");
+            stackTest.push("W");
+            stackTest.pop();
+            assertEquals("Stack { A => R => Null }",stackTest.toString());
+        }
+
+
+    // Can successfully empty a stack after multiple pops
+    @Test
+    public void isEmptyMethodTest (){
+           Stack stack = new Stack();
+           stack.push("R");
+           stack.push("A");
+           stack.push("w");
+           stack.push("A");
+           stack.push("N");
+           stack.pop();
+           stack.pop();
+           stack.pop();
+           stack.pop();
+           stack.pop();
+           stack.pop();
+           assertEquals(true ,stack.isEmpty() );
+       }
+
+       // Can successfully peek the next item on the stack
+    @Test
+       public void peekMethodTest (){
+           Stack stack = new Stack();
+           stack.push("R");
+           stack.push("A");
+           stack.push("w");
+           stack.push("A");
+           stack.push("N");
+           assertEquals("N" ,stack.peek());
+           stack.pop();
+           assertEquals("A" ,stack.peek());
+       }
+
+    @Test
+    public void emptyStackTest() {
+        Stack stack = new Stack();
+        stack.push("R");
+        stack.push("A");
+        stack.push("W");
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        assertEquals("Stack { Null }",stack.toString());
+        assertTrue(stack.isEmpty());
+    }
+    // Calling pop or peek on empty stack raises exception
+    @Test
+    public void exceptionTest(){
+        Stack stack = new Stack();
+        stack.push("R");
+        stack.pop();
+        assertEquals("The Stack is Empty",stack.pop(), "Exception message");
+        stack.peek();
+        assertEquals("The Stack is Empty",stack.peek(), "Exception message");
+        assertEquals( java.util.Optional.of("The Stack is Empty"), java.util.Optional.ofNullable(stack.peek()));
+        stack.push("A");
+        stack.push("B");
+        stack.push("C");
+        assertEquals( java.util.Optional.of("C"), java.util.Optional.ofNullable(stack.peek()));
+
+
+
+    }
+
+    // Queue Tests
+    @Test
+    public void enqueueToQueueTest(){
+        Queue queue = new Queue();
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        assertEquals("Queue { A => B => C => Null }",queue.toString());
+    }
+
+    @Test
+    public void dequeueFromQueueTest(){
+        Queue queue = new Queue();
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        queue.dequeue();
+        assertEquals("Queue { B => C => Null }",queue.toString());
+    }
+
+    @Test
+    public void emptyQueueTest(){
+        Queue queue = new Queue();
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        assertTrue(queue.isEmpty());
+        assertEquals("Queue { Null }",queue.toString());
+        assertEquals("Queue is Empty",queue.peek());
+        assertEquals("Queue is Empty",queue.dequeue());
+
+    }
+
+    @Test
+    public void peekQueueTest(){
+        Queue queue = new Queue();
+        queue.enqueue("A");
+        queue.enqueue("B");
+        queue.enqueue("C");
+        assertEquals( java.util.Optional.of("A"), java.util.Optional.ofNullable(queue.peek()));
+        queue.dequeue();
+        assertEquals(java.util.Optional.of("B"),java.util.Optional.ofNullable(queue.peek()));
+    }
+
+
+
+
+    }
+
+
+
+
