@@ -11,4 +11,4 @@
 | Challenge03   | [Challenge03](challenge3/README.md)        |
 | Challenge05+06+07+08-linked list   | [Challenge05+06+07+08](challenge5+6+7/lib)        |
 | Challenge10-Stack & Queue   | [Challenge10](challenge5+6+7/lib) |
-| Challenge11-Stack-queue-pseudo   | [Challenge11](/mnt/c/Users/dc/asac/401/data-structures-and-algorithms-401/challenge5+6+7/lib/src/main/java/linkedList/queue) |
+| Challenge11-Stack-queue-pseudo   | [Challenge11](challenge5+6+7/lib) |
