@@ -3,6 +3,7 @@
  */
 package linkedList;
 
+import linkedList.queue.PseudoQueue;
 import linkedList.queue.Queue;
 import linkedList.stack.Stack;
 
@@ -11,7 +12,8 @@ public class Main {
 
 //       linkedListMethods();
 //        stackMethods();
-        queueMethods();
+//        queueMethods();
+        pseudoQueueMethods();
     }
     public static void linkedListMethods (){
         //        LinkedList linkedList = new LinkedList();
@@ -79,6 +81,7 @@ public class Main {
     }
 
 
+    // code challenge 10
 
     public static void stackMethods() throws Exception {
 
@@ -98,7 +101,7 @@ public class Main {
         System.out.println(stack.pop());
         System.out.println(stack.pop());
         System.out.println(stack.peek());
-//        System.out.println(stack.pop());
+        System.out.println(stack.pop());
         System.out.println(stack.peek());
 
 
@@ -107,26 +110,52 @@ public class Main {
 
     public static void queueMethods(){
         Queue queue = new Queue();
+        queue.enqueue("R");
         queue.enqueue("A");
-        queue.enqueue("B");
-        queue.enqueue("C");
-        System.out.println(queue);
-        System.out.println(queue.isEmpty());
-        queue.dequeue();
-        System.out.println(queue);
-        queue.dequeue();
-        System.out.println(queue);
-        queue.dequeue();
-        queue.dequeue();
-        System.out.println(queue.dequeue());
-        System.out.println(queue);
-        System.out.println(queue.peek());
+        queue.enqueue("W");
         queue.enqueue("A");
-        queue.enqueue("B");
-        queue.enqueue("C");
-        System.out.println(queue.peek());
-        queue.dequeue();
-        System.out.println(queue.peek());
+        queue.enqueue("N");
+        System.out.println(queue);
+//        System.out.println(queue.isEmpty());
+//        queue.dequeue();
+//        System.out.println(queue);
+//        queue.dequeue();
+//        System.out.println(queue);
+//        queue.dequeue();
+//        queue.dequeue();
+//        System.out.println(queue.dequeue());
+//        System.out.println(queue);
+//        System.out.println(queue.peek());
+//        queue.enqueue("A");
+//        queue.enqueue("B");
+//        queue.enqueue("C");
+//        System.out.println(queue.peek());
+//        queue.dequeue();
+//        System.out.println(queue.peek());
+
+
+    }
+
+    // challenge 11
+
+    public static void pseudoQueueMethods(){
+        PseudoQueue firstStack = new PseudoQueue();
+        firstStack.enqueue("R");
+        firstStack.enqueue("A");
+        firstStack.enqueue("W");
+        firstStack.enqueue("A");
+        firstStack.enqueue("N");
+        System.out.println(firstStack);
+        firstStack.dequeue();
+        System.out.println(firstStack);
+        firstStack.dequeue();
+        System.out.println(firstStack);
+        firstStack.dequeue();
+        firstStack.dequeue();
+        firstStack.dequeue();
+        firstStack.dequeue();
+        firstStack.dequeue();
+        System.out.println(firstStack);
 
 
     }

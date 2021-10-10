@@ -2,7 +2,7 @@ package linkedList.stack;
 
 public class Stack {
 
-    private StackNode top;
+    public StackNode top;
 
     public void push (String data){
      if (isEmpty()){
