@@ -3,6 +3,7 @@
  */
 package linkedList;
 
+import linkedList.queue.PseudoQueue;
 import linkedList.queue.Queue;
 import linkedList.stack.Stack;
 import linkedList.stack.StackNode;
@@ -321,8 +322,38 @@ class MainTest {
         queue.dequeue();
         assertEquals(java.util.Optional.of("B"),java.util.Optional.ofNullable(queue.peek()));
     }
+// challenge 11 Test
 
+    @Test
+    public void pseudoEnqueueTest() {
 
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue("R");
+        pseudoQueue.enqueue("A");
+        pseudoQueue.enqueue("W");
+        pseudoQueue.enqueue("A");
+        pseudoQueue.enqueue("N");
+        assertEquals("Stack { N => A => W => A => R => Null }", pseudoQueue.toString());
+        assertEquals("N", pseudoQueue.firstStack.peek());
+        pseudoQueue.enqueue("B");
+        assertEquals("B",pseudoQueue.firstStack.peek());
+        assertFalse(pseudoQueue.firstStack.isEmpty());
+    }
+
+    @Test
+    public void dequeueTest(){
+        PseudoQueue pseudoQueue = new PseudoQueue();
+        pseudoQueue.enqueue("A");
+        pseudoQueue.enqueue("B");
+        pseudoQueue.enqueue("C");
+        pseudoQueue.dequeue();
+        assertEquals("Stack { C => B => Null }",pseudoQueue.toString());
+        pseudoQueue.dequeue();
+        pseudoQueue.dequeue();
+        assertTrue(pseudoQueue.firstStack.isEmpty());
+        assertEquals("Stack { Null }",pseudoQueue.toString());
+        assertEquals("Empty", pseudoQueue.dequeue());
+    }
 
 
     }
