@@ -12,3 +12,4 @@
 | Challenge05+06+07+08-linked list   | [Challenge05+06+07+08](challenge5+6+7/lib)        |
 | Challenge10-Stack & Queue   | [Challenge10](challenge5+6+7/lib) |
 | Challenge11-Stack-queue-pseudo   | [Challenge11](challenge5+6+7/lib) |
+| Challenge13-Stack-queue-brackets   | [Challenge13](challenge5+6+7/lib) |
