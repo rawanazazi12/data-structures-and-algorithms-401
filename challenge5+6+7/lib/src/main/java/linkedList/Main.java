@@ -5,15 +5,24 @@ package linkedList;
 
 import linkedList.queue.PseudoQueue;
 import linkedList.queue.Queue;
+import linkedList.stack.CharStack;
 import linkedList.stack.Stack;
 
-public class Main {
+public class Main{
     public static void main (String [] args) throws Exception {
 
 //       linkedListMethods();
 //        stackMethods();
 //        queueMethods();
         pseudoQueueMethods();
+
+
+        // challenge 13
+
+        CharStack charStack = new CharStack();
+
+        System.out.println("Validate Brackets Output => "+ validateBrackets("{}(){}"));
+
     }
     public static void linkedListMethods (){
         //        LinkedList linkedList = new LinkedList();
@@ -159,4 +168,36 @@ public class Main {
 
 
     }
+    public static boolean validateBrackets (String input) throws Exception {
+
+        CharStack  characterStack = new CharStack();
+
+
+        for(int i = 0; i < input.length(); i++){
+            if(input.charAt(i) == '{' || input.charAt(i) == '[' || input.charAt(i) == '(' ){
+                characterStack.push(input.charAt(i));
+            }else{
+
+                if(characterStack.isEmpty()){
+                    return false;
+                }
+
+                if(input.charAt(i) == '}' && characterStack.peek() == '{' ||
+                        input.charAt(i) == ']' && characterStack.peek() == '[' ||
+                        input.charAt(i) == ')' &&  characterStack.peek() == '('){
+                    characterStack.pop();
+
+                }else {
+                    if(characterStack.isEmpty()){
+                        return false;
+                    }
+                }
+
+            }
+
+        }
+        return characterStack.isEmpty();
+    }
+
+
 }
