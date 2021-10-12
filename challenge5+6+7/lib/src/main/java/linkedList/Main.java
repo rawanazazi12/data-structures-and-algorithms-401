@@ -21,7 +21,7 @@ public class Main{
 
         CharStack charStack = new CharStack();
 
-        System.out.println("Validate Brackets Output => "+ validateBrackets("{}(){}"));
+        System.out.println("Validate Brackets Output => "+ validateBrackets("(){}[[]]"));
 
     }
     public static void linkedListMethods (){
@@ -168,10 +168,12 @@ public class Main{
 
 
     }
+
+
+    // challenge 13
     public static boolean validateBrackets (String input) throws Exception {
 
         CharStack  characterStack = new CharStack();
-
 
         for(int i = 0; i < input.length(); i++){
             if(input.charAt(i) == '{' || input.charAt(i) == '[' || input.charAt(i) == '(' ){
@@ -183,9 +185,9 @@ public class Main{
                 }
 
                 if(input.charAt(i) == '}' && characterStack.peek() == '{' ||
-                        input.charAt(i) == ']' && characterStack.peek() == '[' ||
-                        input.charAt(i) == ')' &&  characterStack.peek() == '('){
-                    characterStack.pop();
+                        input.charAt(i) == ')' && characterStack.peek() == '(' ||
+                        input.charAt(i) == ']' &&  characterStack.peek() == '['){
+                        characterStack.pop();
 
                 }else {
                     if(characterStack.isEmpty()){
