@@ -89,4 +89,17 @@ public class AppTest {
         assertFalse(binaryTree.contains(4));
     }
 
+    // Challenge 16
+
+    @Test
+    public void findMaxValueTest(){
+        BinarySearchTree<Integer> binaryTree1 = new BinarySearchTree<>();
+        binaryTree1.setRoot(new BinaryNode<>(1));
+        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(2000));
+        binaryTree1.getRoot().setRightNode(new BinaryNode<>(800));
+        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(100));
+        assertEquals(2000,binaryTree1.findMaxvalue());
+        BinarySearchTree<Integer> binaryTree2 = new BinarySearchTree<>();
+        assertEquals(0, binaryTree2.findMaxvalue());
+    }
 }

@@ -22,14 +22,14 @@ public class App {
 //        System.out.println(binaryTree.contains(2));
 //        System.out.println(binaryTree.contains(10));
 
-        BinaryTree<Integer> binaryTree1 = new BinaryTree<>();
+        BinarySearchTree<Integer> binaryTree1 = new BinarySearchTree<>();
         binaryTree1.setRoot(new BinaryNode<>(1));
-        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(2));
-        binaryTree1.getRoot().setRightNode(new BinaryNode<>(3));
-        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(4));
+        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(2000));
+        binaryTree1.getRoot().setRightNode(new BinaryNode<>(800));
+        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(100));
 
 
-       binaryTree1.getMaxValue();
+        System.out.println(binaryTree1.findMaxvalue());
 
     }
 }
