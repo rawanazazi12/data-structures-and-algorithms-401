@@ -87,28 +87,28 @@ public class MaxStack {
 //        return max;
 
 
-        MaxStack st = new MaxStack();
-    MaxStack maxSt = new MaxStack();
-    public static void push(int data) throws Exception {
-
-        int max = data;
-
-        if (!maxStack.isEmpty() && max < maxStack.peek()) {
-            max = maxStack.peek();
-        }
-
-        stack.push(data);
-        maxStack.push(max);
-    }
-
-    public void pop() {
-        stack.pop();
-        maxStack.pop();
-    }
-
-    public int getMax() throws Exception {
-        return maxStack.peek();
-    }
+//        MaxStack st = new MaxStack();
+//    MaxStack maxSt = new MaxStack();
+//    public static void push(int data) throws Exception {
+//
+//        int max = data;
+//
+//        if (!maxStack.isEmpty() && max < maxStack.peek()) {
+//            max = maxStack.peek();
+//        }
+//
+//        stack.push(data);
+//        maxStack.push(max);
+//    }
+//
+//    public void pop() {
+//        stack.pop();
+//        maxStack.pop();
+//    }
+//
+//    public int getMax() throws Exception {
+//        return maxStack.peek();
+//    }
 
 
 
@@ -124,26 +124,26 @@ public class MaxStack {
         return stackValue;
     }
 
-
-    static MaxStack mainStack = new MaxStack ();
+//
+//    static MaxStack mainStack = new MaxStack ();
 
 //    static void push(int x){
 //        mainStack.push(x);
 //    }
 
-    public int getMax() throws Exception {
-        int max = mainStack.peek();
-        while(mainStack.size!=0){
-
-            if(max<mainStack.peek()){
-                max = mainStack.peek();
-            }
-
-
-            mainStack.pop();
-        }
-        return max;
-    }
+//    public int getMax() throws Exception {
+//        int max = mainStack.peek();
+//        while(mainStack.size!=0){
+//
+//            if(max<mainStack.peek()){
+//                max = mainStack.peek();
+//            }
+//
+//
+//            mainStack.pop();
+//        }
+//        return max;
+//    }
 
 //    static void pop(){
 //        mainStack.pop();

@@ -24,11 +24,11 @@ public class Main{
 //
 //        System.out.println("Validate Brackets Output => "+ validateBrackets("(){}[[]]"));
 
-        MaxStack mainStack = new MaxStack();
-        mainStack.push(20);
-        mainStack.push(50);
-        mainStack.push(6000);
-        mainStack.getMax();
+//        MaxStack mainStack = new MaxStack();
+//        mainStack.push(20);
+//        mainStack.push(50);
+//        mainStack.push(6000);
+//        mainStack.getMax();
 
     }
     public static void linkedListMethods (){

@@ -3,7 +3,7 @@ package challenge15;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree <T>{
+public class BinaryTree <T extends Comparable<T>>{
     public BinaryNode<T> root;
     List<T> postOrderList = new ArrayList<>();
     List<T> preOrderList = new ArrayList<>();
@@ -97,4 +97,38 @@ public class BinaryTree <T>{
     }
 
 
+    public void getMaxValue (){
+        try {
+            if (isEmpty()) {
+                throw new Exception("Tree is Empty");
+            } else {
+
+                T max;
+                max = root.getData();
+                findMax(root,max);
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+    private T findMax(BinaryNode <T> root, T max){
+        T leftMax = findMax(root.getLeftNode(), max);
+        T rightMax = findMax(root.getRightNode(), max);
+        if(rightMax.compareTo(max) > 0)
+            max = rightMax;
+        if(leftMax.compareTo(max) > 0)
+            max = leftMax;
+
+        return max;
+    }
+
+    public BinaryNode<T> getRoot() {
+        return root;
+    }
+
+    public void setRoot(BinaryNode<T> root) {
+        this.root = root;
+    }
 }

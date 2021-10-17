@@ -11,16 +11,25 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
 
-        BinarySearchTree <Integer> binaryTree = new BinarySearchTree<>();
-        binaryTree.add(1);
-        binaryTree.add(5);
-        binaryTree.add(2);
-        binaryTree.add(7);
-        binaryTree.add(0);
-        binaryTree.postOrderTraversal();
-        binaryTree.toString();
-        System.out.println(binaryTree.contains(2));
-        System.out.println(binaryTree.contains(10));
+//        BinarySearchTree <Integer> binaryTree = new BinarySearchTree<>();
+//        binaryTree.add(1);
+//        binaryTree.add(5);
+//        binaryTree.add(2);
+//        binaryTree.add(7);
+//        binaryTree.add(0);
+//        binaryTree.postOrderTraversal();
+//        binaryTree.toString();
+//        System.out.println(binaryTree.contains(2));
+//        System.out.println(binaryTree.contains(10));
+
+        BinaryTree<Integer> binaryTree1 = new BinaryTree<>();
+        binaryTree1.setRoot(new BinaryNode<>(1));
+        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(2));
+        binaryTree1.getRoot().setRightNode(new BinaryNode<>(3));
+        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(4));
+
+
+       binaryTree1.getMaxValue();
 
     }
 }
