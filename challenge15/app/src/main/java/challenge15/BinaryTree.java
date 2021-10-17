@@ -1,11 +1,12 @@
 package challenge15;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BinaryTree <T extends Comparable<T>>{
     public BinaryNode<T> root;
-    List<T> postOrderList = new ArrayList<>();
+    List<Integer> postOrderList = new ArrayList<>();
     List<T> preOrderList = new ArrayList<>();
     List<T> inorderList = new ArrayList<>();
 
@@ -70,7 +71,7 @@ public class BinaryTree <T extends Comparable<T>>{
                 if (isEmpty()) {
                     throw new Exception("Tree is Empty");
                 } else {
-                    traversePostOrder(root);
+                    traversePostOrder((BinaryNode<Integer>) root);
                 }
             }catch (Exception e){
                 System.out.println(e.getMessage());
@@ -78,14 +79,14 @@ public class BinaryTree <T extends Comparable<T>>{
 
     }
 
-    private void traversePostOrder (BinaryNode <T> root){
+    private void traversePostOrder (BinaryNode <Integer> root){
         if (root.getLeftNode() != null){
             traversePostOrder(root.getLeftNode());
         }
         if (root.getRightNode() != null){
             traversePostOrder(root.getRightNode());
         }
-        System.out.println(root.getData() + " => ");
+//        System.out.println(root.getData() + " => ");
         postOrderList.add(root.getData());
     }
 
@@ -97,32 +98,31 @@ public class BinaryTree <T extends Comparable<T>>{
     }
 
 
-    public void getMaxValue (){
+    public int findMaxvalue() {
+
         try {
             if (isEmpty()) {
                 throw new Exception("Tree is Empty");
             } else {
+                Integer max = (Integer) root.getData();
 
-                T max;
-                max = root.getData();
-                findMax(root,max);
+                traversePostOrder((BinaryNode<Integer>) root);
+
+                for(int i = 0; i<postOrderList.size(); i++){
+                    if(max <postOrderList.get(i)){
+                        max = postOrderList.get(i);
+                    }
+                }
+                return max;
             }
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
+       return 0;
     }
 
 
-    private T findMax(BinaryNode <T> root, T max){
-        T leftMax = findMax(root.getLeftNode(), max);
-        T rightMax = findMax(root.getRightNode(), max);
-        if(rightMax.compareTo(max) > 0)
-            max = rightMax;
-        if(leftMax.compareTo(max) > 0)
-            max = leftMax;
-
-        return max;
-    }
 
     public BinaryNode<T> getRoot() {
         return root;

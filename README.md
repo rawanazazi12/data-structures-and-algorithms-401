@@ -15,3 +15,4 @@
 | Challenge12- First out Animal Shelter   | [Challenge12](challenge12) |
 | Challenge13-Stack-queue-brackets   | [Challenge13](challenge5+6+7/lib) |
 | Challenge15-Trees   | [Challenge15](challenge15) |
+| Challenge16-tree-max   | [Challenge16](challenge15) |
