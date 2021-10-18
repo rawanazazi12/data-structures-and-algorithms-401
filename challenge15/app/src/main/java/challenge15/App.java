@@ -24,12 +24,17 @@ public class App {
 
         BinarySearchTree<Integer> binaryTree1 = new BinarySearchTree<>();
         binaryTree1.setRoot(new BinaryNode<>(1));
-        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(2000));
-        binaryTree1.getRoot().setRightNode(new BinaryNode<>(800));
-        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(100));
+        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(5));
+        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(2));
+        binaryTree1.getRoot().getLeftNode().setRightNode(new BinaryNode<>(10));
+        binaryTree1.getRoot().setRightNode(new BinaryNode<>(3));
+        binaryTree1.getRoot().getRightNode().setLeftNode(new BinaryNode<>(13));
+        binaryTree1.getRoot().getRightNode().setRightNode(new BinaryNode<>(11));
+
 
 
         System.out.println(binaryTree1.findMaxvalue());
+        System.out.println(binaryTree1.breadthFirst(binaryTree1));
 
     }
 }
