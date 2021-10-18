@@ -1,8 +1,8 @@
 package challenge15;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import org.checkerframework.checker.units.qual.A;
+
+import java.util.*;
 
 public class BinaryTree <T extends Comparable<T>>{
     public BinaryNode<T> root;
@@ -120,6 +120,28 @@ public class BinaryTree <T extends Comparable<T>>{
         }
 
        return 0;
+    }
+
+    public ArrayList<Integer> breadthFirst(BinaryTree binaryTree)
+    {
+        if(isEmpty()){
+            System.out.println("Tree is Empty");
+            return null;
+        }
+        Queue<BinaryNode> queue = new LinkedList<BinaryNode>();
+        ArrayList <Integer> values = new ArrayList<>();
+        queue.add(binaryTree.root);
+        while (!queue.isEmpty()) {
+            BinaryNode tempNode = queue.poll();
+            values.add((Integer) tempNode.getData());
+            if (tempNode.getLeftNode() != null) {
+                queue.add(tempNode.getLeftNode());
+            }
+            if (tempNode.getRightNode() != null) {
+                queue.add(tempNode.getRightNode());
+            }
+        }
+        return values;
     }
 
 

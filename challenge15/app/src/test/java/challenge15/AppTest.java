@@ -102,4 +102,20 @@ public class AppTest {
         BinarySearchTree<Integer> binaryTree2 = new BinarySearchTree<>();
         assertEquals(0, binaryTree2.findMaxvalue());
     }
+
+    // Challenge 17
+    @Test
+    public void breadthFirstTest(){
+        BinaryTree<Integer> binaryTree1 = new BinaryTree<>();
+        binaryTree1.setRoot(new BinaryNode<>(1));
+        binaryTree1.getRoot().setLeftNode(new BinaryNode<>(5));
+        binaryTree1.getRoot().getLeftNode().setLeftNode(new BinaryNode<>(2));
+        binaryTree1.getRoot().getLeftNode().setRightNode(new BinaryNode<>(10));
+        binaryTree1.getRoot().setRightNode(new BinaryNode<>(3));
+        binaryTree1.getRoot().getRightNode().setLeftNode(new BinaryNode<>(13));
+        binaryTree1.getRoot().getRightNode().setRightNode(new BinaryNode<>(11));
+        assertEquals("[1, 5, 3, 2, 10, 13, 11]",binaryTree1.breadthFirst(binaryTree1).toString());
+        BinaryTree<Integer> binaryTree2 = new BinaryTree<>();
+        assertEquals(null, binaryTree2.breadthFirst(binaryTree2));
+    }
 }
