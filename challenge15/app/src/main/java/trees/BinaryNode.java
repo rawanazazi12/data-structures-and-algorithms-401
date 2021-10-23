@@ -1,4 +1,4 @@
-package challenge15;
+package trees;
 
 public class BinaryNode<T> {
     private T data;

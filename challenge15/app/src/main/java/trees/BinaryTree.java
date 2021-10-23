@@ -1,6 +1,4 @@
-package challenge15;
-
-import org.checkerframework.checker.units.qual.A;
+package trees;
 
 import java.util.*;
 
@@ -79,7 +77,7 @@ public class BinaryTree <T extends Comparable<T>>{
 
     }
 
-    private void traversePostOrder (BinaryNode <Integer> root){
+    void traversePostOrder(BinaryNode<Integer> root){
         if (root.getLeftNode() != null){
             traversePostOrder(root.getLeftNode());
         }

@@ -1,4 +1,4 @@
-package challenge15;
+package trees;
 
 public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>  {
 
@@ -44,7 +44,26 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T>  {
     }
 
 
-
+     public Integer findSum(){
+         try {
+             if (isEmpty()) {
+                 throw new Exception("Tree is Empty");
+             }else{
+                 Integer sum = 0;
+//                 traversePostOrder((BinaryNode<Integer>) root);
+                 postOrderTraversal();
+                 for (int i = 0; i<postOrderList.size(); i++){
+                     if(postOrderList.get(i) % 2 == 1 ){
+                         sum+=postOrderList.get(i);
+                     }
+                 }
+                 return sum;
+             }
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+         }
+         return 0;
+     }
 
     @Override
     public String toString() {

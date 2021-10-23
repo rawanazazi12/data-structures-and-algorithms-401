@@ -17,3 +17,4 @@
 | Challenge15-Trees   | [Challenge15](challenge15) |
 | Challenge16-tree-max   | [Challenge16](challenge15) |
 | Challenge17-Breadth-first Traversal   | [Challenge17](challenge15) |
+| Challenge18-tree-fizz-buzz   | [Challenge18](challenge15) |
