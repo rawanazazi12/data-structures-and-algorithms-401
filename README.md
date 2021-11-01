@@ -19,4 +19,4 @@
 | Challenge17-Breadth-first Traversal   | [Challenge17](challenge15) |
 | Challenge18-tree-fizz-buzz   | [Challenge18](challenge15) |
 | Challenge26-Insertion Sort   | [Challenge26](/challenge26-insertionSort/BLOG.md) |
-| Challenge27-Merge Sort   | [Challenge27](/challenge27/BlOG.md) |
+| Challenge27-Merge Sort   | [Challenge27](challenge27/BLOG.md) |
