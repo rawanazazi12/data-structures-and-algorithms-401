@@ -18,6 +18,6 @@
 | Challenge16-tree-max   | [Challenge16](challenge15) |
 | Challenge17-Breadth-first Traversal   | [Challenge17](challenge15) |
 | Challenge18-tree-fizz-buzz   | [Challenge18](challenge15) |
-| Challenge26-Insertion Sort   | [Challenge26](challenge26-insertionSort/BLOG) |
-| Challenge27-Merge Sort   | [Challenge27](challenge27/BlOG) |
+| Challenge26-Insertion Sort   | [Challenge26](challenge26-insertionSort/BLOG.md) |
+| Challenge27-Merge Sort   | [Challenge27](challenge27/BlOG.md) |
 | Challenge28-Quick Sort   | [Challenge28](challenge28/README.md) |
