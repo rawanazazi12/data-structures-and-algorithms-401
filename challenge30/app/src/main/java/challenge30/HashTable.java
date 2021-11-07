@@ -124,4 +124,24 @@ public class HashTable <K,V> {
         }
         return get(key) != null;
     }
+
+
+    // <Challenge 31>
+
+    public String  repeatedWord( String data) {
+        String[] words = data.split(" ");
+        HashTable<String,String> wordTable = new HashTable<>();
+        for(int i=0;i<words.length;i++) {
+            String word = words[i].toLowerCase();
+            if(word.contains(",")){
+                word = word.substring(0, word.length()-1);
+            }
+            if(wordTable.get(word)!=null) {
+                return ("Repeated word:"+word);
+            }else {
+                wordTable.add(word, word);
+            }
+        }
+        return "No repeated words";
+    }
 }
