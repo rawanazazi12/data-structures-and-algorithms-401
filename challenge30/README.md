@@ -18,3 +18,17 @@ Implement a Hashtable Class with the following methods:
 
 - isEmpty(): check the hash table is empty or not.
 
+
+
+# Code Challenge: Class 31: Find the first repeated word in a book
+
+## Overview              
+
+Write a method that takes a String (have sentence) then finds the first word to occur more than once in a that sentence and return the word.
+
+## Whiteboard Process
+
+![challenge 31](whiteboard/challenge31.PNG)
+
+
+

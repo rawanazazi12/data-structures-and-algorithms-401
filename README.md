@@ -22,4 +22,5 @@
 | Challenge27-Merge Sort   | [Challenge27](challenge27/BlOG.md) |
 | Challenge28-Quick Sort   | [Challenge28](challenge28/README.md) |
 | Challenge30-Hash Table   | [Challenge30](challenge30) |
+| Challenge31-hashmap-repeated-word   | [Challenge31](challenge30) |
 
