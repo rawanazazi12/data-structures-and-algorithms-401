@@ -31,4 +31,13 @@ Write a method that takes a String (have sentence) then finds the first word to 
 ![challenge 31](whiteboard/challenge31.PNG)
 
 
+# Code Challenge:Class 32: Find common values in 2 binary trees.
 
+## Overview 
+
+Create a method that takes two binary trees as arguments and return an array of values found in both trees
+
+## Whiteboard Process
+
+
+![challenge 32](whiteboard/challenge32.PNG)
