@@ -24,4 +24,6 @@
 | Challenge30-Hash Table   | [Challenge30](challenge30) |
 | Challenge31-hashmap-repeated-word   | [Challenge31](challenge30) |
 | Challenge32-tree_intersection   | [Challenge32](challenge30) |
+| Challenge33-hashmap-left-join  | [Challenge33](challenge30) |
+
 

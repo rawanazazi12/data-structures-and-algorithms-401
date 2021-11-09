@@ -6,6 +6,10 @@ package challenge30;
 import challenge30.binaryTree.BinaryTree;
 import challenge30.binaryTree.Node;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -55,5 +59,43 @@ public class App {
         tree2.getRoot().getRight().setRight(new Node(300));
 
         System.out.println(trees.treeIntersection(tree1,tree2));
+
+
+        // Challenge 33
+
+        HashMap<String, String> firstHashMap = new HashMap<>();
+        HashMap<String, String> secondHashMap = new HashMap<>();
+
+        firstHashMap.put("fond", "enamored");
+        firstHashMap.put("wrath", "anger");
+        firstHashMap.put("diligent", "employed");
+        firstHashMap.put("outfit", "garb");
+        firstHashMap.put("guide", "usher");
+
+        secondHashMap.put("fond", "averse");
+        secondHashMap.put("wrath", "delight");
+        secondHashMap.put("diligent", "idle");
+        secondHashMap.put("guide", "follow");
+        secondHashMap.put("flow", "jam");
+
+        System.out.println(leftJoin(firstHashMap, secondHashMap));
+
+
+
+
+    }
+
+    // "Challenge 33"
+
+    public static List<String> leftJoin(HashMap x, HashMap y){
+
+        List<String> list = new ArrayList<>();
+        for(Object key : x.keySet()){
+            if(x.containsKey(key)){
+                list.add("[ " + key +", "+ x.get(key)+ ", " + y.get(key) +" ]");
+            }
+        }
+
+        return list;
     }
 }

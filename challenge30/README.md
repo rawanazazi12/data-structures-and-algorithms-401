@@ -41,3 +41,15 @@ Create a method that takes two binary trees as arguments and return an array of 
 
 
 ![challenge 32](whiteboard/challenge32.PNG)
+
+
+
+# Code Challenge: Class 33: Implement a simplified LEFT JOIN for 2 Hashmaps.
+
+## Overview 
+
+create a methods that takes two hashmaps as arguments and return a single data structure
+
+## Whiteboard Process
+
+![challenge 33](whiteboard/challenge33.PNG)

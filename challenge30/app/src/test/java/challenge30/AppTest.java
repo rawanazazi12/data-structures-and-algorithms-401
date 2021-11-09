@@ -6,6 +6,10 @@ package challenge30;
 import challenge30.binaryTree.BinaryTree;
 import challenge30.binaryTree.Node;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+
+import static challenge30.App.leftJoin;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -145,6 +149,65 @@ class AppTest {
 
 
         assertEquals("[100, 250]", trees.treeIntersection(tree1,tree2).toString());
+
+    }
+
+    //"Challenge 33"
+
+    @Test
+    public void leftWithAllJoinsTest(){
+        HashMap h1 = new HashMap();
+        h1.put("fond", "enamored");
+        h1.put("wrath", "anger");
+        h1.put("flow", "jam");
+
+        HashMap h2 = new HashMap();
+        h2.put("fond", "averse");
+        h2.put("wrath", "delight");
+        h2.put("flow", "test");
+
+        assertEquals("[[ wrath, anger, delight ], [ flow, jam, test ], [ fond, enamored, averse ]]", leftJoin(h1, h2).toString());
+    }
+
+    @Test
+    public void leftWithSomeJoinsTest(){
+        HashMap h1 = new HashMap();
+        h1.put("fond", "enamored");
+        h1.put("wrath", "anger");
+        h1.put("diligent", "employed");
+        h1.put("outfit", "garb");
+        h1.put("guide", "usher");
+
+        HashMap h2 = new HashMap();
+        h2.put("fond", "averse");
+        h2.put("wrath", "delight");
+        h2.put("flow", "jam");
+
+
+        assertEquals("[[ diligent, employed, null ], [ outfit, garb, null ], [ wrath, anger, delight ], [ guide, usher, null ], [ fond, enamored, averse ]]",leftJoin(h1, h2).toString());
+    }
+
+    @Test
+    public void emptySecondHashmapTest(){
+        HashMap h1 = new HashMap();
+        h1.put("fond", "enamored");
+        h1.put("wrath", "anger");
+        h1.put("diligent", "employed");
+        h1.put("outfit", "garb");
+        h1.put("guide", "usher");
+
+        HashMap h2 = new HashMap();
+
+        assertEquals("[[ diligent, employed, null ], [ outfit, garb, null ], [ wrath, anger, null ], [ guide, usher, null ], [ fond, enamored, null ]]", leftJoin(h1, h2).toString());
+
+    }
+
+    @Test
+    public void twoEmptyHashmapsTest(){
+        HashMap h1 = new HashMap();
+        HashMap h2 = new HashMap();
+
+        assertEquals("[]", leftJoin(h1, h2).toString());
 
     }
 
