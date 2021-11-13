@@ -35,9 +35,10 @@ public class App {
         System.out.println(studentsGrades.contains("Liam"));
         System.out.println(studentsGrades.hashCode("Adam"));
 
-        HashTable<String , String> words = new HashTable<>();
-        String data = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York";
-        System.out.println(words.repeatedWord(data));
+        // challenge 31
+        HashTable<String , Integer> words = new HashTable<>();
+        String data = "In a galaxy far far away";
+        System.out.println(words.mostCommonWord(data));
 
 
         // challenge 32

@@ -11,4 +11,62 @@ class AppTest {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+    public void addNodeTest(){
+
+        Graph graph = new Graph();
+
+        Node<String> node1 = graph.addNode("John");
+        Node<String> node2 = graph.addNode("Sara");
+        Node<String> node3 = graph.addNode("Michel");
+
+        assertEquals("[{John}, {Sara}, {Michel}]",graph.getNode().toString());
+        assertEquals(3,graph.getSize());
+    }
+
+    @Test
+    public void addEdgeTest(){
+
+        Graph graph = new Graph();
+        Node<String> node1 = graph.addNode("John");
+        Node<String> node2 = graph.addNode("Sara");
+        graph.addEdge(node1, node2);
+        assertEquals("[{Sara}, {John}]", graph.getNode().toString());
+        assertEquals(2, graph.getSize());
+    }
+
+    @Test
+    public void getNeighborsTest(){
+
+        Graph graph = new Graph();
+
+        Node<String> node1 = graph.addNode("John");
+        Node<String> node2 = graph.addNode("Sara");
+        Node<String> node3 = graph.addNode("Michel");
+        graph.addEdge(node1, node2);
+        graph.addEdge(node2, node3);
+        graph.addEdge(node3, node1);
+
+        assertEquals("[{Sara}]",graph.getNeighbors(node1).toString());
+        assertEquals("[{John}]",graph.getNeighbors(node3).toString());
+
+    }
+
+    @Test
+    public void emptyGraph(){
+
+        Graph graph = new Graph();
+        assertEquals(0,graph.getSize());
+        assertEquals("[]", graph.getNode().toString());
+    }
+
+    @Test
+    void addEdgeWithWeightTest() {
+        Graph<String> graph = new Graph();
+        Node<String> node1 = graph.addNode("Tia");
+        Node<String> node2 = graph.addNode("Wess");
+        graph.addEdge(node1, node2, 100.0);
+
+        assertEquals(100.0, graph.nodes.get(node1).get(node2));
+    }
+
 }

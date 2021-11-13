@@ -3,6 +3,9 @@
  */
 package challenge35;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,5 +13,38 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+        // Challenge 35
+
+        Graph<String> graph = new Graph<>();
+        Node<String> node1 = graph.addNode("John");
+        Node<String> node2 = graph.addNode("Sara");
+        Node<String> node3 = graph.addNode("Michel");
+        Node<String> node4 = graph.addNode("Lia");
+        Node<String> node5 = graph.addNode("William");
+        graph.addEdge(node1, node2);
+        graph.addEdge(node2, node5);
+        graph.addEdge(node1, node3);
+        graph.addEdge(node3, node4);
+        graph.addEdge(node1, node2, 5.00);
+        graph.addEdge(node2, node5, 10.00);
+        List<Node<String>> group1 = Arrays.asList(node1, node2, node5);
+        List<Node<String>> group2 = Arrays.asList(node1, node3, node4);
+        List<Node<String>> group3 = List.of(node1);
+        List<Node<String>> group4 = Arrays.asList(node4, node5);
+        System.out.println(group1);
+        System.out.println(group2);
+        System.out.println(group3);
+        System.out.println(group4);
+
+        System.out.println(graph.getSize());
+        System.out.println(graph.getNode());
+        System.out.println(graph.getNeighbors(node1));
+        System.out.println(graph.getNeighbors(node3));
+
+
+
     }
+
+
 }

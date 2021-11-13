@@ -131,7 +131,7 @@ public class Main{
         queue.enqueue("W");
         queue.enqueue("A");
         queue.enqueue("N");
-        System.out.println(queue);
+//        System.out.println(queue);
 //        System.out.println(queue.isEmpty());
 //        queue.dequeue();
 //        System.out.println(queue);
@@ -161,6 +161,7 @@ public class Main{
         firstStack.enqueue("W");
         firstStack.enqueue("A");
         firstStack.enqueue("N");
+        firstStack.enqueue("NEW");
         System.out.println(firstStack);
         firstStack.dequeue();
         System.out.println(firstStack);
