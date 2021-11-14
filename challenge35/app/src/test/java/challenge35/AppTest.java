@@ -69,4 +69,27 @@ class AppTest {
         assertEquals(100.0, graph.nodes.get(node1).get(node2));
     }
 
+    // challenge 36
+
+    @Test
+    void breadthFirstTest() {
+        Graph<String> graph = new Graph<>();
+        Node<String> node1 = graph.addNode("A");
+        Node<String> node2 = graph.addNode("B");
+        Node<String> node3 = graph.addNode("C");
+        Node<String> node4 = graph.addNode("D");
+        Node<String> node5 = graph.addNode("E");
+        Node<String> node6 = graph.addNode("F");
+
+        graph.addEdge(node1, node2);
+        graph.addEdge(node2, node3);
+        graph.addEdge(node3, node4);
+        graph.addEdge(node4, node5);
+        graph.addEdge(node5, node6);
+        graph.addEdge(node6, node5);
+
+        assertEquals("[{A}, {B}, {C}, {D}, {E}, {F}]", graph.breadthFirst(node1).toString());
+        assertEquals("[{B}, {C}, {D}, {E}, {F}]", graph.breadthFirst(node2).toString());
+        assertEquals("[{F}, {E}]", graph.breadthFirst(node6).toString());
+    }
 }
