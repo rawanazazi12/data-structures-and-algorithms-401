@@ -47,3 +47,15 @@ Implement your own Graph. The graph should be represented as an adjacency list, 
 - get size
   - Space O(1)
   - Time O(1)
+
+
+# Code Challenge: Class 36 - Implement a breadth-first traversal on a graph.
+
+## Challenge 
+
+Create a method to traverse a graph and return a collection of nodes  in the order they were visited
+
+
+## Whiteboard Process
+
+![Challenge36](whiteboard/challenge36.PNG)

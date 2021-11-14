@@ -37,5 +37,29 @@ public class Graph<V> {
     public int getSize() {
         return nodes.size();
     }
+
+
+    // challenge 36
+    public List<Node<V>> breadthFirst(Node<V> data) {
+        List<Node<V>> nodes = new ArrayList<>();
+        Queue<Node<V>> breadth = new LinkedList<>();
+        Set<Node<V>> visited = new HashSet<>();
+
+        breadth.add(data);
+        visited.add(data);
+        while (!breadth.isEmpty()) {
+            Node<V> front = breadth.remove();
+            nodes.add(front);
+            if (this.getNeighbors(front).size() > 0) {
+                for (Object neighbor : this.getNeighbors(front)) {
+                    if (!visited.contains(neighbor)) {
+                        visited.add((Node<V>) neighbor);
+                        breadth.add((Node<V>) neighbor);
+                    }
+                }
+            }
+        }
+        return nodes;
+    }
 }
 
