@@ -61,5 +61,21 @@ public class Graph<V> {
         }
         return nodes;
     }
+
+
+    // challenge 37
+
+    public String businessTrip(Graph graph, List<Node<V>> citiesName) {
+        Double cost = 0.0;
+        boolean flag = false;
+        for (int i = 0; i < citiesName.size() - 1; i++) {
+            if (graph.nodes.containsKey(citiesName.get(i)) && this.nodes.get(citiesName.get(i)).containsKey(citiesName.get(i + 1))) {
+                flag = true;
+                cost += this.nodes.get(citiesName.get(i)).get(citiesName.get(i + 1));
+            }
+        }
+        String result = flag + ", $" + cost;
+        return result;
+    }
 }
 

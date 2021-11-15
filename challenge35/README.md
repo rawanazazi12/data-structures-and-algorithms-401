@@ -59,3 +59,15 @@ Create a method to traverse a graph and return a collection of nodes  in the ord
 ## Whiteboard Process
 
 ![Challenge36](whiteboard/challenge36.PNG)
+
+
+# Code Challenge: Class 37 - graph-business-trip
+
+## Challenge     
+
+Create a method that takes a graph and list of cities and return the cost of the trip between cities
+
+
+## Whiteboard Process
+
+![Challenge37](whiteboard/challenge37.PNG)
