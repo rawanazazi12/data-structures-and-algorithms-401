@@ -4,6 +4,10 @@
 package challenge35;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -91,5 +95,39 @@ class AppTest {
         assertEquals("[{A}, {B}, {C}, {D}, {E}, {F}]", graph.breadthFirst(node1).toString());
         assertEquals("[{B}, {C}, {D}, {E}, {F}]", graph.breadthFirst(node2).toString());
         assertEquals("[{F}, {E}]", graph.breadthFirst(node6).toString());
+    }
+
+
+    // Challenge 37
+
+    @Test
+    public void testBusinessTrip() {
+        Graph<String> graph = new Graph<>();
+        Node<String> Pandora = graph.addNode("Pandora");
+        Node<String> Arendelle = graph.addNode("Arendelle");
+        Node<String> Metroville = graph.addNode("Metroville");
+        Node<String> Monstroplolis = graph.addNode("Monstroplolis");
+        Node<String> Narnia = graph.addNode("Narnia");
+        Node<String> Naboo = graph.addNode("Naboo");
+
+        graph.addEdge(Pandora, Arendelle, 150.0);
+        graph.addEdge(Arendelle, Metroville, 99.0);
+        graph.addEdge(Arendelle, Monstroplolis, 42.0);
+        graph.addEdge(Metroville, Narnia, 37.0);
+        graph.addEdge(Metroville, Pandora, 82.0);
+        graph.addEdge(Metroville, Naboo, 26.0);
+        graph.addEdge(Monstroplolis, Metroville, 105.0);
+        graph.addEdge(Monstroplolis, Naboo, 73.0);
+        graph.addEdge(Naboo, Narnia, 250.0);
+
+        List<Node<String>> cities1 = Arrays.asList(Metroville, Pandora);
+        List<Node<String>> cities2 = Arrays.asList(Arendelle, Monstroplolis, Naboo);
+        List<Node<String>> cities3 = Arrays.asList(Naboo, Pandora);
+        List<Node<String>> cities4 = Arrays.asList(Narnia, Arendelle, Naboo);
+
+        assertEquals("true, $82.0", graph.businessTrip(graph, cities1));
+        assertEquals("true, $115.0", graph.businessTrip(graph, cities2));
+        assertEquals("false, $0.0", graph.businessTrip(graph, cities3));
+        assertEquals("false, $0.0", graph.businessTrip(graph, cities4));
     }
 }
