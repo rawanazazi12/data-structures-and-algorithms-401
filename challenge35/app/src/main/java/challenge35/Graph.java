@@ -77,5 +77,29 @@ public class Graph<V> {
         String result = flag + ", $" + cost;
         return result;
     }
+
+    // challenge 38
+
+    public List<Node<V>> depthFirst(Node<V> root) {
+        Stack depthFirstStack = new Stack();
+        List depthFirstList = new ArrayList();
+        Set<Node<V>> visited = new HashSet<>();
+        if (root == null) return depthFirstList;
+        depthFirstStack.add(root);
+        visited.add(root);
+        while (!depthFirstStack.isEmpty()) {
+            Node top = (Node) depthFirstStack.pop();
+            depthFirstList.add(top.value);
+            if (this.getNeighbors(top).size() > 0) {
+                for (Object neighbor : this.getNeighbors(top)) {
+                    if (!visited.contains(neighbor)) {
+                        visited.add((Node<V>) neighbor);
+                        depthFirstStack.add(neighbor);
+                    }
+                }
+            }
+        }
+        return depthFirstList;
+    }
 }
 

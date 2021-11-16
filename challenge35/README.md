@@ -71,3 +71,16 @@ Create a method that takes a graph and list of cities and return the cost of the
 ## Whiteboard Process
 
 ![Challenge37](whiteboard/challenge37.PNG)
+
+
+# Code Challenge: Class 38 - graph-depth-first
+
+
+## Challenge 
+
+Create a method that take a node as a parameter as a start point and return a collection of nodes in the order they were visited.
+
+
+## Whiteboard Process
+
+![Challenge38](whiteboard/challenge38.PNG)
