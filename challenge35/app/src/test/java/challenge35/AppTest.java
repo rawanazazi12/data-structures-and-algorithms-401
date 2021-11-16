@@ -130,4 +130,31 @@ class AppTest {
         assertEquals("false, $0.0", graph.businessTrip(graph, cities3));
         assertEquals("false, $0.0", graph.businessTrip(graph, cities4));
     }
+
+
+    // Code challenge 38
+    @Test
+    void firstDepth() {
+        Graph<String> graph = new Graph<>();
+        Node<String> nodeA = graph.addNode("A");
+        Node<String> nodeB = graph.addNode("B");
+        Node<String> nodeC = graph.addNode("C");
+        Node<String> nodeD = graph.addNode("D");
+        Node<String> nodeE = graph.addNode("E");
+        Node<String> nodeF = graph.addNode("F");
+        Node<String> nodeG = graph.addNode("G");
+        Node<String> nodeH = graph.addNode("H");
+
+        graph.addEdge(nodeA, nodeB);
+        graph.addEdge(nodeA, nodeD);
+        graph.addEdge(nodeB, nodeD);
+        graph.addEdge(nodeB, nodeC);
+        graph.addEdge(nodeC, nodeG);
+        graph.addEdge(nodeD, nodeE);
+        graph.addEdge(nodeD, nodeH);
+        graph.addEdge(nodeD, nodeF);
+        graph.addEdge(nodeH, nodeF);
+
+        assertEquals("[A, B, C, G, D, F, H, E]", graph.depthFirst(nodeA).toString());
+    }
 }

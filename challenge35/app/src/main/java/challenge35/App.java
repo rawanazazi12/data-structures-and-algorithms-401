@@ -44,7 +44,34 @@ public class App {
 
 
 
+        // challenge 38
+
+        Graph<String> graphTest2 = new Graph<>();
+        Node<String> nodeA = graphTest2.addNode("A");
+        Node<String> nodeB = graphTest2.addNode("B");
+        Node<String> nodeC = graphTest2.addNode("C");
+        Node<String> nodeD = graphTest2.addNode("D");
+        Node<String> nodeE = graphTest2.addNode("E");
+        Node<String> nodeF = graphTest2.addNode("F");
+        Node<String> nodeG = graphTest2.addNode("G");
+        Node<String> nodeH = graphTest2.addNode("H");
+
+        graphTest2.addEdge(nodeA, nodeB);
+        graphTest2.addEdge(nodeA, nodeD);
+        graphTest2.addEdge(nodeB, nodeD);
+        graphTest2.addEdge(nodeB, nodeC);
+        graphTest2.addEdge(nodeC, nodeG);
+        graphTest2.addEdge(nodeD, nodeE);
+        graphTest2.addEdge(nodeD, nodeH);
+        graphTest2.addEdge(nodeD, nodeF);
+        graphTest2.addEdge(nodeH, nodeF);
+
+        System.out.println(graphTest2.depthFirst(nodeA).toString());
+
     }
 
 
 }
+
+
+
